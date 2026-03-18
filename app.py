@@ -163,7 +163,7 @@ def main():
     debt_to_income = outstanding_debt / annual_income
     debt_per_loan = outstanding_debt / num_of_loan
     delay_ratio = num_of_delayed_payments / num_of_loan
-    high_utilization = (credit_utilization_ratio > 0.3).astype(int)
+    high_utilization = int(credit_utilization_ratio > 0.3)
 
     def get_age_group(age):
         if 18 <= age < 25:
