@@ -128,8 +128,8 @@ def main():
                    "Teacher", "Manager", "Musician"]
     occupation_features = {f"Occupation_{o}":0 for o in occupations}
     occupation_features[f"Occupation_{occupation}"] = 1
-    loan_array = mlb.transform([type_of_loan])
-    loan_dummies = pd.DataFrame(loan_array, columns = mlb.classes_)
+    loan_array = mbl.transform([type_of_loan])
+    loan_dummies = pd.DataFrame(loan_array, columns = mbl.classes_)
     num_loan_types_input = loan_dummies.sum(axis = 1).iloc[0]
     available_income = monthly_inhand_salary - total_EMI_per_month - amount_invested_monthly
     spending = available_income - monthly_balance
