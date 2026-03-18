@@ -203,8 +203,9 @@ def main():
                     month_features, occupation_features, spending_level_encoded, 
                     payment_size_encoded, age_group_dict]
         result = make_prediction(features)
+        label_map = {0: "Poor", 1: "Standard", 2: "Good"}
 
-        st.success(f"The prediction is: {result}")
+        st.success(f"Prediction: {result} ({label_map[result]})")
 
 if __name__ == "__main__":
     main()
