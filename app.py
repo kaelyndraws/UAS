@@ -183,7 +183,7 @@ def main():
         "age_group_senior": 0
     }
     age_group_dict[f"age_group_{age_group}"] = 1
-    long_credit_history = (credit_history_age > 120).astype(int)
+    long_credit_history = int(credit_history_age > 120)
     income_delay = annual_income / num_of_delayed_payments
     credit_history_per_age = credit_history_age / age
     total_credit_lines = num_bank_accounts + num_credit_cards
