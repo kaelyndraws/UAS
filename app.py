@@ -5,7 +5,7 @@ import pandas as pd
 
 scaler = joblib.load("preprocessor.pkl")
 model = joblib.load("model.pkl")
-mbl = joblib.load("mbl.pkl")
+mbl = joblib.load("mbl_new.pkl")
 
 def make_prediction(features):
     input_array = np.array(features).reshape(1, -1)
