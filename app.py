@@ -8,8 +8,10 @@ model = joblib.load("model.pkl")
 mbl = joblib.load("mbl_new.pkl")
 
 def make_prediction(features):
-    input_array = np.array(features).reshape(1, -1)
-    x_scaled = scaler.transform(input_array)
+    feature_names = joblib.load("features.pkl")
+    input_df = pd.DataFrame([features])
+    input_df = input_df.reindex(columns=feature_names, fill_value=0)
+    x_scaled = scaler.transform(input_df)
     prediction = model.predict(x_scaled)
 
     return prediction[0]
